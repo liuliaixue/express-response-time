@@ -1,6 +1,6 @@
 {
   "name": "express-response-time",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a simple middleware to record response time, no dependcies",
   "main": "index.js",
   "scripts": {
