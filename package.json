@@ -1,6 +1,6 @@
 {
   "name": "express-response-time",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "a simple middleware to record response time, no dependcies",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,13 @@
     "middleware",
     "response-time"
   ],
-  "author": "Alan Liu",
+  "author": {
+    "name": "Alan Liu",
+    "email": "liuliaixue@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuliaixue/express-response-time"
+  },
   "license": "MIT"
 }
