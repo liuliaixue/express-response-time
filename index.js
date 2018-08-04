@@ -1,15 +1,18 @@
-const timeRecord = (logger) => {
-
-    return function (req, res, next) {
-        const start = new Date();
-
-        res.on('finish', function () {
-            const end = new Date();
-            const duration = end - start;
-            logger(`requestURL: ${req.url} takes ${duration}`)
-        })
-        next()
+const responseTime = (callback) => {
+    if (typeof callback === 'function') {
+        return function (req, res, next) {
+            const start = new Date();
+            res.on('finish', function () {
+                const end = new Date();
+                const duration = end - start;
+                callback(req.method, req.url, duration)
+            })
+            next()
+        }
+    } else {
+        console.error('express-response-time request a callback function')
     }
+
 }
 
-module.exports = timeRecord;
+module.exports = responseTime;
